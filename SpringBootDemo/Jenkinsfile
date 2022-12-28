@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("build"){
             steps{
-                sh "mvn clean -DskipTests package"
+                sh "mvn -f ${env.GIT_URL}/SpringBootDemo/pom.xml clean -DskipTests package"
             }
         }
         stage("test"){
